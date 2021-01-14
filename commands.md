@@ -18,6 +18,7 @@
   - Topic 109: Networking Fundamentals
   - Topic 110: Security
 
+
 ## By topic order
 
 ### 101 Exam
