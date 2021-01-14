@@ -28,6 +28,7 @@
 **`lsmod`**: Show current loaded Linux Kernel modules.
 ```shell-session
 $ lsmod --help
+
 Usage: lsmod
 ```
 <br/>
@@ -35,6 +36,7 @@ Usage: lsmod
 **`modinfo`**: Show information about a Linux Kernel module.
 ```shell-session
 $ modinfo --help
+
 Usage:
         modinfo [options] filename [args]
 Options:
@@ -55,6 +57,7 @@ Options:
 **`modprobe`**: Add and remove modules from the Linux Kernel.
 ```shell-session
 $ modprobe --help
+
 Usage:
 	modprobe [options] [-i] [-b] modulename
 	modprobe [options] -a [-i] [-b] modulename [modulename...]
@@ -103,6 +106,7 @@ General Options:
 **`lspci`**: List all PCI devices.
 ```shell-session
 $ lspci -
+
 Usage: lspci [<switches>]
 
 Basic display modes:
