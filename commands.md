@@ -22,6 +22,143 @@
 
 ### Topic 101: System Architecture
 
+**`dmesg`**: It is used to examine or control the kernel ring buffer. The default action is to display all messages from the kernel ring buffer.
+```shell-session
+$ dmesg --help
+
+Usage:
+ dmesg [options]
+
+Display or control the kernel ring buffer.
+
+Options:
+ -C, --clear                 clear the kernel ring buffer
+ -c, --read-clear            read and clear all messages
+ -D, --console-off           disable printing messages to console
+ -E, --console-on            enable printing messages to console
+ -F, --file <file>           use the file instead of the kernel log buffer
+ -f, --facility <list>       restrict output to defined facilities
+ -H, --human                 human readable output
+ -k, --kernel                display kernel messages
+ -L, --color[=<when>]        colorize messages (auto, always or never)
+                               colors are enabled by default
+ -l, --level <list>          restrict output to defined levels
+ -n, --console-level <level> set level of messages printed to console
+ -P, --nopager               do not pipe output into a pager
+ -r, --raw                   print the raw message buffer
+ -S, --syslog                force to use syslog(2) rather than /dev/kmsg
+ -s, --buffer-size <size>    buffer size to query the kernel ring buffer
+ -u, --userspace             display userspace messages
+ -w, --follow                wait for new messages
+ -x, --decode                decode facility and level to readable string
+ -d, --show-delta            show time delta between printed messages
+ -e, --reltime               show local time and time delta in readable format
+ -T, --ctime                 show human-readable timestamp (may be inaccurate!)
+ -t, --notime                don't show any timestamp with messages
+     --time-format <format>  show timestamp using the given format:
+                               [delta|reltime|ctime|notime|iso]
+Suspending/resume will make ctime and iso timestamps inaccurate.
+
+ -h, --help                  display this help
+ -V, --version               display version
+
+Supported log facilities:
+    kern - kernel messages
+    user - random user-level messages
+    mail - mail system
+  daemon - system daemons
+    auth - security/authorization messages
+  syslog - messages generated internally by syslogd
+     lpr - line printer subsystem
+    news - network news subsystem
+
+Supported log levels (priorities):
+   emerg - system is unusable
+   alert - action must be taken immediately
+    crit - critical conditions
+     err - error conditions
+    warn - warning conditions
+  notice - normal but significant condition
+    info - informational
+   debug - debug-level messages
+
+For more details see dmesg(1).
+```
+<br/>
+
+**`journalctl`**: It may be used to query the contents of the systemd journal as written by systemd-journald.service.
+```shell-session
+$ journalctl --help
+
+journalctl [OPTIONS...] [MATCHES...]
+
+Query the journal.
+
+Options:
+     --system                Show the system journal
+     --user                  Show the user journal for the current user
+  -M --machine=CONTAINER     Operate on local container
+  -S --since=DATE            Show entries not older than the specified date
+  -U --until=DATE            Show entries not newer than the specified date
+  -c --cursor=CURSOR         Show entries starting at the specified cursor
+     --after-cursor=CURSOR   Show entries after the specified cursor
+     --show-cursor           Print the cursor after all the entries
+  -b --boot[=ID]             Show current boot or the specified boot
+     --list-boots            Show terse information about recorded boots
+  -k --dmesg                 Show kernel message log from the current boot
+  -u --unit=UNIT             Show logs from the specified unit
+     --user-unit=UNIT        Show logs from the specified user unit
+  -t --identifier=STRING     Show entries with the specified syslog identifier
+  -p --priority=RANGE        Show entries with the specified priority
+  -g --grep=PATTERN          Show entries with MESSSAGE matching PATTERN
+     --case-sensitive[=BOOL] Force case sensitive or insenstive matching
+  -e --pager-end             Immediately jump to the end in the pager
+  -f --follow                Follow the journal
+  -n --lines[=INTEGER]       Number of journal entries to show
+     --no-tail               Show all lines, even in follow mode
+  -r --reverse               Show the newest entries first
+  -o --output=STRING         Change journal output mode (short, short-precise,
+                               short-iso, short-iso-precise, short-full,
+                               short-monotonic, short-unix, verbose, export,
+                               json, json-pretty, json-sse, cat)
+     --output-fields=LIST    Select fields to print in verbose/export/json modes
+     --utc                   Express time in Coordinated Universal Time (UTC)
+  -x --catalog               Add message explanations where available
+     --no-full               Ellipsize fields
+  -a --all                   Show all fields, including long and unprintable
+  -q --quiet                 Do not show info messages and privilege warning
+     --no-pager              Do not pipe output into a pager
+     --no-hostname           Suppress output of hostname field
+  -m --merge                 Show entries from all available journals
+  -D --directory=PATH        Show journal files from directory
+     --file=PATH             Show journal file
+     --root=ROOT             Operate on files below a root directory
+     --interval=TIME         Time interval for changing the FSS sealing key
+     --verify-key=KEY        Specify FSS verification key
+     --force                 Override of the FSS key pair with --setup-keys
+
+Commands:
+  -h --help                  Show this help text
+     --version               Show package version
+  -N --fields                List all field names currently used
+  -F --field=FIELD           List all values that a specified field takes
+     --disk-usage            Show total disk usage of all journal files
+     --vacuum-size=BYTES     Reduce disk usage below specified size
+     --vacuum-files=INT      Leave only the specified number of journal files
+     --vacuum-time=TIME      Remove journal files older than specified time
+     --verify                Verify journal file consistency
+     --sync                  Synchronize unwritten journal messages to disk
+     --flush                 Flush all journal data from /run into /var
+     --rotate                Request immediate rotation of the journal files
+     --header                Show journal header information
+     --list-catalog          Show all message IDs in the catalog
+     --dump-catalog          Show entries in the message catalog
+     --update-catalog        Update the message catalog database
+     --new-id128             Generate a new 128-bit ID
+     --setup-keys            Generate a new FSS key pair
+```
+<br/>
+
 **`lspci`**: List all PCI devices.
 ```shell-session
 $ lspci -
