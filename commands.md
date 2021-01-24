@@ -1,5 +1,5 @@
 # Glossary of Commands for LPIC-1
-**Note:** the list of commands is based on the topic order in its first appearance at the [learning material](https://learning.lpi.org/en/learning-materials/learning-materials/). Although inside each topic the commands were ordered alphabetically.
+**Note:** the list of commands is based on the topic order in its first appearance at the [learning material](https://learning.lpi.org/en/learning-materials/learning-materials/). Although inside each topic the commands were ordered alphabetically. The sources of each description are their respective [man pages](https://www.kernel.org/doc/man-pages/) and usage/help shorts from command.
 
 ## Contents
 
@@ -159,7 +159,7 @@ Commands:
 ```
 <br/>
 
-**`lspci`**: List all PCI devices.
+**`lspci`**: Utility for displaying information about PCI buses in the system and devices connected to them. By default, it shows a brief list of devices.
 ```shell-session
 $ lspci -
 
@@ -203,7 +203,7 @@ PCI access options:
 ```
 <br/>
 
-**`lsmod`**: Show current loaded Linux Kernel modules.
+**`lsmod`**: Program which nicely formats the contents of the `/proc/modules`, showing what kernel modules are currently loaded.
 ```shell-session
 $ lsmod --help
 
@@ -211,9 +211,10 @@ Usage: lsmod
 ```
 <br/>
 
-**`lsusb`**: List USB devices.
+**`lsusb`**: Utility for displaying information about USB buses in the system and the devices connected to them.
 ```shell-session
 $ lsusb --help
+
 Usage: lsusb [options]...
 List USB devices
   -v, --verbose
@@ -235,7 +236,7 @@ List USB devices
 ```
 <br/>
 
-**`modinfo`**: Show information about a Linux Kernel module.
+**`modinfo`**: Extracts information from the Linux Kernel modules given on the command line.
 ```shell-session
 $ modinfo --help
 
@@ -256,7 +257,7 @@ Options:
 ```
 <br/>
 
-**`modprobe`**: Add and remove modules from the Linux Kernel.
+**`modprobe`**: Adds or remove modules from the Linux Kernel.
 ```shell-session
 $ modprobe --help
 
