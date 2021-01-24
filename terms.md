@@ -1,4 +1,5 @@
 # Glossary of Terms for LPIC-1
+Note: For the topic order, it is based on the first appearance at the [learning material](https://learning.lpi.org/en/learning-materials/learning-materials/).
 
 ## Contents
 
