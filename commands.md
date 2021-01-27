@@ -5,6 +5,16 @@
 
 ### 101 Exam
   - [Topic 101: System Architecture](#topic-101-system-architecture)
+    - [dmesg](#dmesg)
+    - [journalctl](#journalctl)
+    - [lspci](#lspci)
+    - [lsmod](#lsmod)
+    - [lsusb](#lsusb)
+    - [modinfo](#modinfo)
+    - [modprobe](#modprobe)
+    - [runlevel](#runlevel)
+    - [systemctl](#systemctl)
+    - [shutdown](#shutdown)
   - Topic 102: Linux Installation and Package Management #TODO
   - Topic 103: GNU and Unix Commands #TODO
   - Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard #TODO
@@ -22,7 +32,8 @@
 
 ### Topic 101: System Architecture
 
-**`dmesg`**: It is used to examine or control the kernel ring buffer. The default action is to display all messages from the kernel ring buffer.
+#### dmesg
+It is used to examine or control the kernel ring buffer. The default action is to display all messages from the kernel ring buffer.
 ```shell-session
 $ dmesg --help
 
@@ -86,7 +97,8 @@ For more details see dmesg(1).
 ```
 <br/>
 
-**`journalctl`**: It may be used to query the contents of the systemd journal as written by systemd-journald.service.
+#### `journalctl`
+It may be used to query the contents of the systemd journal as written by systemd-journald.service.
 ```shell-session
 $ journalctl --help
 
@@ -159,7 +171,8 @@ Commands:
 ```
 <br/>
 
-**`lspci`**: Utility for displaying information about PCI buses in the system and devices connected to them. By default, it shows a brief list of devices.
+#### `lspci`
+Utility for displaying information about PCI buses in the system and devices connected to them. By default, it shows a brief list of devices.
 ```shell-session
 $ lspci -
 
@@ -203,7 +216,8 @@ PCI access options:
 ```
 <br/>
 
-**`lsmod`**: Program which nicely formats the contents of the `/proc/modules`, showing what kernel modules are currently loaded.
+#### `lsmod`
+Program which nicely formats the contents of the `/proc/modules`, showing what kernel modules are currently loaded.
 ```shell-session
 $ lsmod --help
 
@@ -211,7 +225,8 @@ Usage: lsmod
 ```
 <br/>
 
-**`lsusb`**: Utility for displaying information about USB buses in the system and the devices connected to them.
+#### `lsusb`
+Utility for displaying information about USB buses in the system and the devices connected to them.
 ```shell-session
 $ lsusb --help
 
@@ -236,7 +251,8 @@ List USB devices
 ```
 <br/>
 
-**`modinfo`**: Extracts information from the Linux Kernel modules given on the command line.
+#### `modinfo`
+Extracts information from the Linux Kernel modules given on the command line.
 ```shell-session
 $ modinfo --help
 
@@ -257,7 +273,8 @@ Options:
 ```
 <br/>
 
-**`modprobe`**: Adds or remove modules from the Linux Kernel.
+#### `modprobe`
+Adds or remove modules from the Linux Kernel.
 ```shell-session
 $ modprobe --help
 
@@ -303,5 +320,190 @@ General Options:
 	-v, --verbose               enables more messages
 	-V, --version               show version
 	-h, --help                  show this help
+```
+<br/>
+
+#### `runlevel`
+Prints the previous and current SysV runlevel if they are known. The two runlevel characters are separated by a single space character. If a runlevel cannot be determined, N is printed instead. If neither can be determined, the word "unknown" is printed.
+```shell-session
+$ runlevel --help
+
+runlevel [OPTIONS...]
+
+Prints the previous and current runlevel of the init system.
+
+     --help      Show this help
+```
+<br/>
+
+#### `shutdown`
+It may be used to halt, power-off or reboot the machine.
+```shell-session
+$ shutdown --help
+
+shutdown [OPTIONS...] [TIME] [WALL...]
+
+Shut down the system.
+
+     --help      Show this help
+  -H --halt      Halt the machine
+  -P --poweroff  Power-off the machine
+  -r --reboot    Reboot the machine
+  -h             Equivalent to --poweroff, overridden by --halt
+  -k             Don't halt/power-off/reboot, just send warnings
+     --no-wall   Don't send wall message before halt/power-off/reboot
+  -c             Cancel a pending shutdown
+```
+
+#### `systemctl`
+It may be used to introspect and control the state of the "systemd" system and service manager.
+```shell-session
+$ systemctl --help
+
+systemctl [OPTIONS...] {COMMAND} ...
+
+Query or send control commands to the systemd manager.
+
+  -h --help           Show this help
+     --version        Show package version
+     --system         Connect to system manager
+     --user           Connect to user service manager
+  -H --host=[USER@]HOST
+                      Operate on remote host
+  -M --machine=CONTAINER
+                      Operate on local container
+  -t --type=TYPE      List units of a particular type
+     --state=STATE    List units with particular LOAD or SUB or ACTIVE state
+  -p --property=NAME  Show only properties by this name
+  -a --all            Show all properties/all units currently in memory,
+                      including dead/empty ones. To list all units installed on
+                      the system, use the &apos;list-unit-files&apos; command instead.
+     --failed         Same as --state=failed
+  -l --full           Don&apos;t ellipsize unit names on output
+  -r --recursive      Show unit list of host and local containers
+     --reverse        Show reverse dependencies with &apos;list-dependencies&apos;
+     --job-mode=MODE  Specify how to deal with already queued jobs, when
+                      queueing a new job
+     --show-types     When showing sockets, explicitly show their type
+     --value          When showing properties, only print the value
+  -i --ignore-inhibitors
+                      When shutting down or sleeping, ignore inhibitors
+     --kill-who=WHO   Who to send signal to
+  -s --signal=SIGNAL  Which signal to send
+     --now            Start or stop unit in addition to enabling or disabling it
+     --dry-run        Only print what would be done
+  -q --quiet          Suppress output
+     --wait           For (re)start, wait until service stopped again
+     --no-block       Do not wait until operation finished
+     --no-wall        Don&apos;t send wall message before halt/power-off/reboot
+     --no-reload      Don&apos;t reload daemon after en-/dis-abling unit files
+     --no-legend      Do not print a legend (column headers and hints)
+     --no-pager       Do not pipe output into a pager
+     --no-ask-password
+                      Do not ask for system passwords
+     --global         Enable/disable/mask unit files globally
+     --runtime        Enable/disable/mask unit files temporarily until next
+                      reboot
+  -f --force          When enabling unit files, override existing symlinks
+                      When shutting down, execute action immediately
+     --preset-mode=   Apply only enable, only disable, or all presets
+     --root=PATH      Enable/disable/mask unit files in the specified root
+                      directory
+  -n --lines=INTEGER  Number of journal entries to show
+  -o --output=STRING  Change journal output mode (short, short-precise,
+                             short-iso, short-iso-precise, short-full,
+                             short-monotonic, short-unix,
+                             verbose, export, json, json-pretty, json-sse, cat)
+     --firmware-setup Tell the firmware to show the setup menu on next boot
+     --plain          Print unit dependencies as a list instead of a tree
+
+Unit Commands:
+  list-units [PATTERN...]         List units currently in memory
+  list-sockets [PATTERN...]       List socket units currently in memory, ordered
+                                  by address
+  list-timers [PATTERN...]        List timer units currently in memory, ordered
+                                  by next elapse
+  start NAME...                   Start (activate) one or more units
+  stop NAME...                    Stop (deactivate) one or more units
+  reload NAME...                  Reload one or more units
+  restart NAME...                 Start or restart one or more units
+  try-restart NAME...             Restart one or more units if active
+  reload-or-restart NAME...       Reload one or more units if possible,
+                                  otherwise start or restart
+  try-reload-or-restart NAME...   If active, reload one or more units,
+                                  if supported, otherwise restart
+  isolate NAME                    Start one unit and stop all others
+  kill NAME...                    Send signal to processes of a unit
+  is-active PATTERN...            Check whether units are active
+  is-failed PATTERN...            Check whether units are failed
+  status [PATTERN...|PID...]      Show runtime status of one or more units
+  show [PATTERN...|JOB...]        Show properties of one or more
+                                  units/jobs or the manager
+  cat PATTERN...                  Show files and drop-ins of one or more units
+  set-property NAME ASSIGNMENT... Sets one or more properties of a unit
+  help PATTERN...|PID...          Show manual for one or more units
+  reset-failed [PATTERN...]       Reset failed state for all, one, or more
+                                  units
+  list-dependencies [NAME]        Recursively show units which are required
+                                  or wanted by this unit or by which this
+                                  unit is required or wanted
+
+Unit File Commands:
+  list-unit-files [PATTERN...]    List installed unit files
+  enable [NAME...|PATH...]        Enable one or more unit files
+  disable NAME...                 Disable one or more unit files
+  reenable NAME...                Reenable one or more unit files
+  preset NAME...                  Enable/disable one or more unit files
+                                  based on preset configuration
+  preset-all                      Enable/disable all unit files based on
+                                  preset configuration
+  is-enabled NAME...              Check whether unit files are enabled
+  mask NAME...                    Mask one or more units
+  unmask NAME...                  Unmask one or more units
+  link PATH...                    Link one or more units files into
+                                  the search path
+  revert NAME...                  Revert one or more unit files to vendor
+                                  version
+  add-wants TARGET NAME...        Add &apos;Wants&apos; dependency for the target
+                                  on specified one or more units
+  add-requires TARGET NAME...     Add &apos;Requires&apos; dependency for the target
+                                  on specified one or more units
+  edit NAME...                    Edit one or more unit files
+  get-default                     Get the name of the default target
+  set-default NAME                Set the default target
+
+Machine Commands:
+  list-machines [PATTERN...]      List local containers and host
+
+Job Commands:
+  list-jobs [PATTERN...]          List jobs
+  cancel [JOB...]                 Cancel all, one, or more jobs
+
+Environment Commands:
+  show-environment                Dump environment
+  set-environment NAME=VALUE...   Set one or more environment variables
+  unset-environment NAME...       Unset one or more environment variables
+  import-environment [NAME...]    Import all or some environment variables
+
+Manager Lifecycle Commands:
+  daemon-reload                   Reload systemd manager configuration
+  daemon-reexec                   Reexecute systemd manager
+
+System Commands:
+  is-system-running               Check whether system is fully running
+  default                         Enter system default mode
+  rescue                          Enter system rescue mode
+  emergency                       Enter system emergency mode
+  halt                            Shut down and halt the system
+  poweroff                        Shut down and power-off the system
+  reboot [ARG]                    Shut down and reboot the system
+  kexec                           Shut down and reboot the system with kexec
+  exit [EXIT_CODE]                Request user instance or container exit
+  switch-root ROOT [INIT]         Change to a different root file system
+  suspend                         Suspend the system
+  hibernate                       Hibernate the system
+  hybrid-sleep                    Hibernate and suspend the system
+  suspend-then-hibernate          Suspend the system, wake after a period of
+                                  time and put it into hibernate
 ```
 <br/>
