@@ -4,18 +4,18 @@
 ## Track of Progress
 
 ### 101 Exam
-- Topic 101: System Architecture
-- Topic 102: Linux Installation and Package Management #TODO
-- Topic 103: GNU and Unix Commands #TODO
-- Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard #TODO
+- [x] Topic 101: System Architecture
+- [ ] Topic 102: Linux Installation and Package Management
+- [ ] Topic 103: GNU and Unix Commands
+- [ ] Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard
 
-### 102 Exam #TODO
-- Topic 105: Shells and Shell Scripting
-- Topic 106: User Interfaces and Desktops
-- Topic 107: Administrative Tasks
-- Topic 108: Essential System Services
-- Topic 109: Networking Fundamentals
-- Topic 110: Security
+### 102 Exam
+- [ ] Topic 105: Shells and Shell Scripting
+- [ ] Topic 106: User Interfaces and Desktops
+- [ ] Topic 107: Administrative Tasks
+- [ ] Topic 108: Essential System Services
+- [ ] Topic 109: Networking Fundamentals
+- [ ] Topic 110: Security
 
 ## LPIC-1 Terms
 
@@ -62,3 +62,10 @@
 **UEFI:** short for Unified Extensible Firmware Interface. It is a specification for a software program that connects a computer's firmware to its operating system. UEFI is expected to eventually replace BIOS. It does the same job as a BIOS, but with one basic difference: it stores all data about initialization and startup in an .efi file, instead of storing it on the firmware. _[(1st source)](https://whatis.techtarget.com/definition/Unified-Extensible-Firmware-Interface-UEFI)_ _[(2nd source)](https://www.freecodecamp.org/news/uefi-vs-bios/)_
 
 **USB:** short for Universal Serial Bus. It is an industry standard for short-distance digital data communications. USB ports allow USB devices to be connected to each other with and transfer digital data over USB cables. They can also supply electric power across the cable to devices that need it. _[(source)](https://www.lifewire.com/what-is-a-usb-port-818166)_
+
+
+<style>
+  ul {
+    list-style-type: none;
+  }
+</style>

@@ -3,31 +3,28 @@
 
 ## Contents
 
-### 101 Exam
-- [Glossary of Commands for LPIC-1](#glossary-of-commands-for-lpic-1)
-  - [Contents](#contents)
-    - [101 Exam](#101-exam)
-    - [102 Exam #TODO](#102-exam-todo)
-  - [101 Exam](#101-exam-1)
-    - [Topic 101: System Architecture](#topic-101-system-architecture)
-      - [dmesg](#dmesg)
-      - [`journalctl`](#journalctl)
-      - [`lspci`](#lspci)
-      - [`lsmod`](#lsmod)
-      - [`lsusb`](#lsusb)
-      - [`modinfo`](#modinfo)
-      - [`modprobe`](#modprobe)
-      - [`runlevel`](#runlevel)
-      - [`shutdown`](#shutdown)
-      - [`systemctl`](#systemctl)
-
-### 102 Exam #TODO
-- Topic 105: Shells and Shell Scripting
-- Topic 106: User Interfaces and Desktops
-- Topic 107: Administrative Tasks
-- Topic 108: Essential System Services
-- Topic 109: Networking Fundamentals
-- Topic 110: Security
+### [101 Exam :)](#101-exam)
+- [x] [Topic 101: System Architecture](#topic-101-system-architecture)
+  - [`dmesg`](#dmesg)
+  - [`journalctl`](#journalctl)
+  - [`lspci`](#lspci)
+  - [`lsmod`](#lsmod)
+  - [`lsusb`](#lsusb)
+  - [`modinfo`](#modinfo)
+  - [`modprobe`](#modprobe)
+  - [`runlevel`](#runlevel)
+  - [`shutdown`](#shutdown)
+  - [`systemctl`](#systemctl)
+- [ ] Topic 102: Linux Installation and Package Management
+- [ ] Topic 103: GNU and Unix Commands
+- [ ] Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard
+### 102 Exam :))
+- [ ] Topic 105: Shells and Shell Scripting
+- [ ] Topic 106: User Interfaces and Desktops
+- [ ] Topic 107: Administrative Tasks
+- [ ] Topic 108: Essential System Services
+- [ ] Topic 109: Networking Fundamentals
+- [ ] Topic 110: Security
 
 
 ## 101 Exam
@@ -509,3 +506,9 @@ System Commands:
                                   time and put it into hibernate
 ```
 <br/>
+
+<style>
+  ul {
+    list-style-type: none;
+  }
+</style>
