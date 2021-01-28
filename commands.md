@@ -1,31 +1,33 @@
 # Glossary of Commands for LPIC-1
-**Note:** the list of commands is based on the topic order in its first appearance at the [learning material](https://learning.lpi.org/en/learning-materials/learning-materials/). Although inside each topic the commands were ordered alphabetically. The sources of each description are their respective [man pages](https://www.kernel.org/doc/man-pages/) and usage/help shorts from command.
+**Note:** the list of commands is based on the topic order in its first appearance at the [learning material provided by LPI](https://learning.lpi.org/en/learning-materials/learning-materials/). Although inside each topic the commands were ordered alphabetically. The sources of each description are their respective [man pages](https://www.kernel.org/doc/man-pages/) and usage/help shorts from command.
 
 ## Contents
 
 ### 101 Exam
-  - [Topic 101: System Architecture](#topic-101-system-architecture)
-    - [dmesg](#dmesg)
-    - [journalctl](#journalctl)
-    - [lspci](#lspci)
-    - [lsmod](#lsmod)
-    - [lsusb](#lsusb)
-    - [modinfo](#modinfo)
-    - [modprobe](#modprobe)
-    - [runlevel](#runlevel)
-    - [systemctl](#systemctl)
-    - [shutdown](#shutdown)
-  - Topic 102: Linux Installation and Package Management #TODO
-  - Topic 103: GNU and Unix Commands #TODO
-  - Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard #TODO
+- [Glossary of Commands for LPIC-1](#glossary-of-commands-for-lpic-1)
+  - [Contents](#contents)
+    - [101 Exam](#101-exam)
+    - [102 Exam #TODO](#102-exam-todo)
+  - [101 Exam](#101-exam-1)
+    - [Topic 101: System Architecture](#topic-101-system-architecture)
+      - [dmesg](#dmesg)
+      - [`journalctl`](#journalctl)
+      - [`lspci`](#lspci)
+      - [`lsmod`](#lsmod)
+      - [`lsusb`](#lsusb)
+      - [`modinfo`](#modinfo)
+      - [`modprobe`](#modprobe)
+      - [`runlevel`](#runlevel)
+      - [`shutdown`](#shutdown)
+      - [`systemctl`](#systemctl)
 
 ### 102 Exam #TODO
-  - Topic 105: Shells and Shell Scripting
-  - Topic 106: User Interfaces and Desktops
-  - Topic 107: Administrative Tasks
-  - Topic 108: Essential System Services
-  - Topic 109: Networking Fundamentals
-  - Topic 110: Security
+- Topic 105: Shells and Shell Scripting
+- Topic 106: User Interfaces and Desktops
+- Topic 107: Administrative Tasks
+- Topic 108: Essential System Services
+- Topic 109: Networking Fundamentals
+- Topic 110: Security
 
 
 ## 101 Exam
