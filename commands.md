@@ -15,6 +15,7 @@
   - [`runlevel`](#runlevel)
   - [`shutdown`](#shutdown)
   - [`systemctl`](#systemctl)
+  - [`telinit`](#telinit)
 - [ ] Topic 102: Linux Installation and Package Management
 - [ ] Topic 103: GNU and Unix Commands
 - [ ] Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard
@@ -504,6 +505,28 @@ System Commands:
   hybrid-sleep                    Hibernate and suspend the system
   suspend-then-hibernate          Suspend the system, wake after a period of
                                   time and put it into hibernate
+```
+<br/>
+
+#### `telinit`
+It may be used to change the SysV system runlevel.
+```shell-session
+$ telinit --help
+
+telinit [OPTIONS...] {COMMAND}
+
+Send control commands to the init daemon.
+
+     --help      Show this help
+     --no-wall   Don't send wall message before halt/power-off/reboot
+
+Commands:
+  0              Power-off the machine
+  6              Reboot the machine
+  2, 3, 4, 5     Start runlevelX.target unit
+  1, s, S        Enter rescue mode
+  q, Q           Reload init daemon configuration
+  u, U           Reexecute init daemon
 ```
 <br/>
 
