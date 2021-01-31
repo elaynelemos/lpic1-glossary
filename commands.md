@@ -6,6 +6,7 @@
 ### [101 Exam :)](#101-exam)
 - [x] [Topic 101: System Architecture](#topic-101-system-architecture)
   - [`dmesg`](#dmesg)
+  - [`init`](#init)
   - [`journalctl`](#journalctl)
   - [`lspci`](#lspci)
   - [`lsmod`](#lsmod)
@@ -94,6 +95,28 @@ Supported log levels (priorities):
    debug - debug-level messages
 
 For more details see dmesg(1).
+```
+<br/>
+
+#### `init`
+Systemd is a system and service manager for Linux operating systems. When run as first process on boot (as PID 1), it acts as init system that brings up and maintains userspace services.
+```shell-session
+$ init --help
+
+init [OPTIONS...] {COMMAND}
+
+Send control commands to the init daemon.
+
+     --help      Show this help
+     --no-wall   Don't send wall message before halt/power-off/reboot
+
+Commands:
+  0              Power-off the machine
+  6              Reboot the machine
+  2, 3, 4, 5     Start runlevelX.target unit
+  1, s, S        Enter rescue mode
+  q, Q           Reload init daemon configuration
+  u, U           Reexecute init daemon
 ```
 <br/>
 
