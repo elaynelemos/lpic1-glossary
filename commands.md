@@ -17,7 +17,10 @@
   - [`shutdown`](#shutdown)
   - [`systemctl`](#systemctl)
   - [`telinit`](#telinit)
-- [ ] Topic 102: Linux Installation and Package Management
+- [ ] [Topic 102: Linux Installation and Package Management](#topic-102-linux-installation-and-package-management)
+  - [`grub-install`](#grub-install)
+  - [`grub-mkconfig`](#grub-mkconfig)
+  - [`update-grub`](#update-grub)
 - [ ] Topic 103: GNU and Unix Commands
 - [ ] Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard
 ### 102 Exam :))
@@ -552,6 +555,126 @@ Commands:
   u, U           Reexecute init daemon
 ```
 <br/>
+
+### Topic 102: Linux Installation and Package Management
+
+#### `grub-install`
+It installs GRUB on your drive.
+
+```shell-session
+$ grub-install --help
+
+Usage: grub-install [OPTION...] [OPTION] [INSTALL_DEVICE]
+Install GRUB on your drive.
+
+      --compress=no|xz|gz|lzo   compress GRUB files [optional]
+  -d, --directory=DIR        use images and modules under DIR
+                             [default=/usr/lib/grub/<platform>]
+      --fonts=FONTS          install FONTS [default=unicode]
+      --install-modules=MODULES   install only MODULES and their dependencies
+                             [default=all]
+  -k, --pubkey=FILE          embed FILE as public key for signature checking
+      --locale-directory=DIR use translations under DIR
+                             [default=/usr/share/locale]
+      --locales=LOCALES      install only LOCALES [default=all]
+      --modules=MODULES      pre-load specified modules MODULES
+      --themes=THEMES        install THEMES [default=starfield]
+  -v, --verbose              print verbose messages.
+      --allow-floppy         make the drive also bootable as floppy (default
+                             for fdX devices). May break on some BIOSes.
+      --auto-nvram           only update NVRAM variables if possible. This
+                             option is only available on EFI and IEEE1275
+                             targets.
+      --boot-directory=DIR   install GRUB images under the directory DIR/grub
+                             instead of the boot/grub directory
+      --bootloader-id=ID     the ID of bootloader. This option is only
+                             available on EFI and Macs.
+      --core-compress=xz|none|auto
+                             choose the compression to use for core image
+      --disk-module=MODULE   disk module to use (biosdisk or native). This
+                             option is only available on BIOS target.
+      --efi-directory=DIR    use DIR as the EFI System Partition root.
+      --force                install even if problems are detected
+      --force-file-id        use identifier file even if UUID is available
+      --label-bgcolor=COLOR  use COLOR for label background
+      --label-color=COLOR    use COLOR for label
+      --label-font=FILE      use FILE as font for label
+      --macppc-directory=DIR use DIR for PPC MAC install.
+      --no-bootsector        do not install bootsector
+      --no-extra-removable   Do not install bootloader code to the removable
+                             media path. This option is only available on EFI.
+      --no-nvram             don't update the `boot-device'/`Boot*' NVRAM
+                             variables. This option is only available on EFI
+                             and IEEE1275 targets.
+      --no-rs-codes          Do not apply any reed-solomon codes when
+                             embedding core.img. This option is only available
+                             on x86 BIOS targets.
+      --no-uefi-secure-boot  do not install an image usable with UEFI Secure
+                             Boot, even if the system was currently started
+                             using it. This option is only available on EFI.
+      --product-version=STRING   use STRING as product version
+      --recheck              delete device map if it already exists
+      --removable            the installation device is removable. This option
+                             is only available on EFI.
+  -s, --skip-fs-probe        do not probe for filesystems in DEVICE
+      --target=TARGET        install GRUB for TARGET platform
+                             [default=x86_64-efi]; available targets: arm-efi,
+                             arm-uboot, arm64-efi, i386-coreboot, i386-efi,
+                             i386-ieee1275, i386-multiboot, i386-pc,
+                             i386-qemu, i386-xen, ia64-efi, mips-arc,
+                             mips-qemu_mips, mipsel-arc, mipsel-loongson,
+                             mipsel-qemu_mips, powerpc-ieee1275,
+                             sparc64-ieee1275, x86_64-efi, x86_64-xen
+      --uefi-secure-boot     install an image usable with UEFI Secure Boot.
+                             This option is only available on EFI and if the
+                             grub-efi-amd64-signed package is installed.
+  -?, --help                 give this help list
+      --usage                give a short usage message
+  -V, --version              print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+
+INSTALL_DEVICE must be system device filename.
+grub-install copies GRUB images into boot/grub.  On some platforms, it may
+also install GRUB into the boot sector.
+
+Report bugs to <bug-grub@gnu.org>.
+```
+<br/>
+
+#### `grub-mkconfig`
+It generates a grub config file.
+```shell-session
+$ grub-mkconfig --help
+
+Usage: grub-mkconfig [OPTION]
+Generate a grub config file
+
+  -o, --output=FILE       output generated config to FILE [default=stdout]
+  -h, --help              print this message and exit
+  -v, --version           print the version information and exit
+
+Report bugs to <bug-grub@gnu.org>.
+```
+<br/>
+
+#### `update-grub`
+It is a stub for running grub-mkconfig -o /boot/grub/grub.cfg to generate a grub2 config file.
+```shell-session
+$ update-grub --help
+
+Usage: grub-mkconfig [OPTION]
+Generate a grub config file
+
+  -o, --output=FILE       output generated config to FILE [default=stdout]
+  -h, --help              print this message and exit
+  -v, --version           print the version information and exit
+
+Report bugs to <bug-grub@gnu.org>.
+```
+<br/>
+
 
 <style>
   ul {
