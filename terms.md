@@ -19,11 +19,13 @@
 
 ## LPIC-1 Terms
 
-**BIOS:** Basic Input/Output System
+**BIOS:** short for Basic Input/Output System. It is a computer program that is typically stored in EPROM and used by the CPU to perform start-up procedures when the computer is turned on. Its two major procedures are determining what peripheral devices are available and loading the operating system (OS) into main memory. After start-up, the BIOS program manages data flow between the OS and the peripherals, so neither the OS nor the application programs need to know the details of the peripherals (such as hardware addresses). _[(source)](https://www.britannica.com/technology/BIOS)_
 
 **Bootloader:** short for "bootstrap loader" also known as a boot program. It is a special operating system software that loads into the working memory of a computer after start-up. For this purpose, immediately after a device starts, a bootloader is generally launched by a bootable medium like a hard drive, a CD/DVD or a USB stick. The boot medium receives information from the computer’s firmware about where the bootloader is. _[(source)](https://www.ionos.com/digitalguide/server/configuration/what-is-a-bootloader/)_
 
 **Daemon:** Program that runs continuously and exists for the purpose of handling periodic service requests that a computer system expects to receive. The daemon program forwards the requests to other programs (or processes) as appropriate. _[(source)](https://whatis.techtarget.com/definition/daemon)_
+
+**Disk:** also called diskette. It is a flat, round plate on which data can be encoded and stored. Fixed disks in the form of hard disks are a common component of a computer’s storage system, but most other forms of disk hardware (floppy disks, CD-ROMs, etc.) have become obsolete. _[(source)](https://www.webopedia.com/definitions/disk/)_
 
 **DMA:** short for Direct Memory Access. It is a method that allows an input/output (I/O) device to send or receive data directly to or from the main memory, bypassing the CPU to speed up memory operations. The process is managed by a chip known as a DMA controller (DMAC). _[(source)](https://www.techopedia.com/definition/2767/direct-memory-access-dma)_
 
@@ -35,7 +37,11 @@
 
 **FAT:** short for File Allocation Table. It is a file system developed for hard drives that originally used 12 or 16 bits for each cluster entry into the file allocation table. It is used by the operating system to manage files on hard drives and other computer systems. _[(source)](https://www.techopedia.com/definition/1369/file-allocation-table-fat)_
 
+**Filesystem:** in computing, file system controls how data is stored and retrieved. In other words, it is the method and data structure that an operating system uses to keep track of files on a disk or partition. _[(source)](https://www.partitionwizard.com/help/what-is-file-system.html)_
+
 **Firmware:** Program stored in a non-volatile memory chip attached to the motherboard, executed every time the computer is powered on. Unlike normal software, firmware cannot be changed or deleted by an end-user without using special programs, and remains on that device whether it's on or off. _[(1st source)](https://learning.lpi.org/en/learning-materials/101-500/101/101.2/101.2_01/)_ _[(2nd source)](https://www.computerhope.com/jargon/f/firmware.htm)_
+
+**GPT:** short for GUID Partition Table. It is a standard for formatting partition tables for storage media, for hard drives. GPT is a component of UEFI. However, GPT partitions can also be used – with restrictions – independently of UEFI. In this case it is necessary that the operating system used and the hard drive to be partitioned support the standard. Owing to various improvements related to it, today GPT has largely replaced the traditional partition style, MBR. _[(source)](https://www.ionos.com/digitalguide/server/configuration/what-is-a-guid-partition-table-gpt/)_
 
 **GRUB:** short for Grand Unified Bootloader. It is a complete program for loading and managing the boot process. It is the most common bootloader for Linux distributions. _[(source)](https://itsfoss.com/what-is-grub/)_
 
@@ -43,9 +49,15 @@
 
 **Kernel:** Software code that serves as a layer between the hardware and main programs that run on a computer. It is the first part to load when the OS boots up. It is loaded in memory and stays there throughout the entire time the computer is in session. _[(source)](http://www.linuxandubuntu.com/home/what-is-linux-kernel)_
 
+**LBA:** short for Logical Block Addressing. It is a common scheme used for specifying the location of blocks of data stored on computer storage devices, generally secondary storage systems such as hard disks. LBA has replaced the CHS scheme in order to overcome certain of its limitations. LBA provides a simple linear address space to the host. The host only need to provide the LBA address without knowing anything of the physical sector positions. _[(source)](https://datacadamia.com/io/drive/lba)_
+
+**LVM:** short for Logical Volume Manager. It is a framework of the Linux operating system that has been introduced for the easier management of physical storage devices. The concept of logical volume management is very much similar to the concept of virtualization, i.e. you can create as many virtual storage volumes on top of a single storage device as you want. The logical storage volumes thus created can be expanded or shrunk according to your growing or reducing storage needs. _[(source)](https://linuxhint.com/whatis_logical_volume_management/)_
+
 **MBR:** short for Master Boot Record. It is also sometimes referred to as the master boot block, master partition boot sector, and sector 0. The MBR is the first sector of the computer hard drive. It tells the computer how the hard drive is partitioned, and how to load the operating system. _[(source)](https://www.computerhope.com/jargon/m/mbr.htm)_
 
 **NVRAM:** short for Non-Volatile Random Access Memory. It is the computer memory that can hold data even when power to the memory chips has been turned off. Today, a good example of NVRAM is flash memory like that used in a Jump drive. NVRAM is also in your computer monitor, printers, cars, smart cards, and other devices that require remembered settings. _[(source)](https://www.computerhope.com/jargon/n/nvram.htm)_
+
+**Partition:** when referring to a computer hard drive, a disk partition or partition is a section of the hard drive that is separated from other segments. Partitions enable users to divide a physical disk into logical sections. For example, allowing multiple operating systems to run on the same device. _[(source)](https://www.computerhope.com/jargon/p/partition.htm)_
 
 **PCI:** short for Peripheral Component Interconnect. It is a hardware bus used for adding internal components to a desktop computer. For example, a PCI card can be inserted into a PCI slot on a motherboard, providing additional I/O ports on the back of a computer. _[(source)](https://techterms.com/definition/pci)_
 
