@@ -1,5 +1,5 @@
 # Glossary of Commands for LPIC-1
-**Note:** the list of commands is based on the topic order in its first appearance at the [learning material provided by LPI](https://learning.lpi.org/en/learning-materials/learning-materials/). Although inside each topic the commands were ordered alphabetically. The sources of each description are their respective [man pages](https://www.kernel.org/doc/man-pages/) and usage/help shorts from command.
+**Note:** the list of commands is based on the topic order in its first appearance at the [learning material provided by LPI](https://learning.lpi.org/en/learning-materials/learning-materials/) (based on the [exams objectives](https://wiki.lpi.org/wiki/LPIC-1_Objectives_V5.0)). Although inside each topic the commands were ordered alphabetically. The sources of each description are their respective [man pages](https://www.kernel.org/doc/man-pages/) and usage/help shorts from command.
 
 ## Contents
 
