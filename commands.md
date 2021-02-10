@@ -20,6 +20,10 @@
 - [ ] [Topic 102: Linux Installation and Package Management](#topic-102-linux-installation-and-package-management)
   - [`grub-install`](#grub-install)
   - [`grub-mkconfig`](#grub-mkconfig)
+  - [`ldconfig`](#ldconfig)
+  - [`ldd`](#ldd)
+  - [`objdump`](#objdump)
+  - [`readelf`](#readelf)
   - [`update-grub`](#update-grub)
 - [ ] Topic 103: GNU and Unix Commands
 - [ ] Topic 104: Devices, Linux Filesystems, Filesystem Hierarchy Standard
@@ -656,6 +660,205 @@ Generate a grub config file
   -v, --version           print the version information and exit
 
 Report bugs to <bug-grub@gnu.org>.
+```
+<br/>
+
+#### `ldconfig`
+It creates the necessary links and cache to the most recent shared libraries found in the directories specified on the command line, in the file /etc/ld.so.conf, and in the trusted directories, /lib and /usr/lib (on some  64-bit  architectures such  as x86-64, lib and /usr/lib are the trusted directories for 32-bit libraries, while /lib64 and /usr/lib64 are used for 64-bit libraries).
+```shell-session
+$ ldconfig --help
+
+Usage: ldconfig.real [OPTION...]
+Configure Dynamic Linker Run Time Bindings.
+
+  -c, --format=FORMAT        Format to use: new, old or compat (default)
+  -C CACHE                   Use CACHE as cache file
+  -f CONF                    Use CONF as configuration file
+  -i, --ignore-aux-cache     Ignore auxiliary cache file
+  -l                         Manually link individual libraries.
+  -n                         Only process directories specified on the command
+                             line.  Don't build cache.
+  -N                         Don't build cache
+  -p, --print-cache          Print cache
+  -r ROOT                    Change to and use ROOT as root directory
+  -v, --verbose              Generate verbose messages
+  -X                         Don't update symbolic links
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+  -V, --version              Print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+
+For bug reporting instructions, please see:
+<https://bugs.launchpad.net/ubuntu/+source/glibc/+bugs>.
+```
+<br/>
+
+#### `ldd`
+It prints  the  shared objects (shared libraries) required by each program or shared object specified on the command line.
+```shell-session
+$ ldd --help
+
+Usage: ldd [OPTION]... FILE...
+      --help              print this help and exit
+      --version           print version information and exit
+  -d, --data-relocs       process data relocations
+  -r, --function-relocs   process data and function relocations
+  -u, --unused            print unused direct dependencies
+  -v, --verbose           print all information
+
+For bug reporting instructions, please see:
+<https://bugs.launchpad.net/ubuntu/+source/glibc/+bugs>.
+```
+<br/>
+
+#### `objdump`
+It displays information about one or more object files.
+```shell-session
+$ objdump --help
+
+Usage: objdump <option(s)> <file(s)>
+ Display information from object <file(s)>.
+ At least one of the following switches must be given:
+  -a, --archive-headers    Display archive header information
+  -f, --file-headers       Display the contents of the overall file header
+  -p, --private-headers    Display object format specific file header contents
+  -P, --private=OPT,OPT... Display object format specific contents
+  -h, --[section-]headers  Display the contents of the section headers
+  -x, --all-headers        Display the contents of all headers
+  -d, --disassemble        Display assembler contents of executable sections
+  -D, --disassemble-all    Display assembler contents of all sections
+  -S, --source             Intermix source code with disassembly
+  -s, --full-contents      Display the full contents of all sections requested
+  -g, --debugging          Display debug information in object file
+  -e, --debugging-tags     Display debug information using ctags style
+  -G, --stabs              Display (in raw form) any STABS info in the file
+  -W[lLiaprmfFsoRtUuTgAckK] or
+  --dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+          =frames-interp,=str,=loc,=Ranges,=pubtypes,
+          =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+          =addr,=cu_index,=links,=follow-links]
+                           Display DWARF info in the file
+  -t, --syms               Display the contents of the symbol table(s)
+  -T, --dynamic-syms       Display the contents of the dynamic symbol table
+  -r, --reloc              Display the relocation entries in the file
+  -R, --dynamic-reloc      Display the dynamic relocation entries in the file
+  @<file>                  Read options from <file>
+  -v, --version            Display this program's version number
+  -i, --info               List object formats and architectures supported
+  -H, --help               Display this information
+
+ The following switches are optional:
+  -b, --target=BFDNAME           Specify the target object format as BFDNAME
+  -m, --architecture=MACHINE     Specify the target architecture as MACHINE
+  -j, --section=NAME             Only display information for section NAME
+  -M, --disassembler-options=OPT Pass text OPT on to the disassembler
+  -EB --endian=big               Assume big endian format when disassembling
+  -EL --endian=little            Assume little endian format when disassembling
+      --file-start-context       Include context from start of file (with -S)
+  -I, --include=DIR              Add DIR to search list for source files
+  -l, --line-numbers             Include line numbers and filenames in output
+  -F, --file-offsets             Include file offsets when displaying information
+  -C, --demangle[=STYLE]         Decode mangled/processed symbol names
+                                  The STYLE, if specified, can be `auto', `gnu',
+                                  `lucid', `arm', `hp', `edg', `gnu-v3', `java'
+                                  or `gnat'
+      --recurse-limit            Enable a limit on recursion whilst demangling.  [Default]
+      --no-recurse-limit         Disable a limit on recursion whilst demangling
+  -w, --wide                     Format output for more than 80 columns
+  -z, --disassemble-zeroes       Do not skip blocks of zeroes when disassembling
+      --start-address=ADDR       Only process data whose address is >= ADDR
+      --stop-address=ADDR        Only process data whose address is <= ADDR
+      --prefix-addresses         Print complete address alongside disassembly
+      --[no-]show-raw-insn       Display hex alongside symbolic disassembly
+      --insn-width=WIDTH         Display WIDTH bytes on a single line for -d
+      --adjust-vma=OFFSET        Add OFFSET to all displayed section addresses
+      --special-syms             Include special symbols in symbol dumps
+      --inlines                  Print all inlines for source line (with -l)
+      --prefix=PREFIX            Add PREFIX to absolute paths for -S
+      --prefix-strip=LEVEL       Strip initial directory names for -S
+      --dwarf-depth=N        Do not display DIEs at depth N or greater
+      --dwarf-start=N        Display DIEs starting with N, at the same depth
+                             or deeper
+      --dwarf-check          Make additional dwarf internal consistency checks.
+
+objdump: supported targets: elf64-x86-64 elf32-i386 elf32-iamcu elf32-x86-64 a.out-i386-linux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-big pe-x86-64 pe-bigobj-x86-64 pe-i386 plugin srec symbolsrec verilog tekhex binary ihex
+objdump: supported architectures: i386 i386:x86-64 i386:x64-32 i8086 i386:intel i386:x86-64:intel i386:x64-32:intel i386:nacl i386:x86-64:nacl i386:x64-32:nacl iamcu iamcu:intel l1om l1om:intel k1om k1om:intel plugin
+
+The following i386/x86-64 specific disassembler options are supported for use
+with the -M switch (multiple options should be separated by commas):
+  x86-64      Disassemble in 64bit mode
+  i386        Disassemble in 32bit mode
+  i8086       Disassemble in 16bit mode
+  att         Display instruction in AT&T syntax
+  intel       Display instruction in Intel syntax
+  att-mnemonic
+              Display instruction in AT&T mnemonic
+  intel-mnemonic
+              Display instruction in Intel mnemonic
+  addr64      Assume 64bit address size
+  addr32      Assume 32bit address size
+  addr16      Assume 16bit address size
+  data32      Assume 32bit data size
+  data16      Assume 16bit data size
+  suffix      Always display instruction suffix in AT&T syntax
+  amd64       Display instruction in AMD64 ISA
+  intel64     Display instruction in Intel64 ISA
+Report bugs to <http://www.sourceware.org/bugzilla/>.
+```
+<br/>
+
+#### `readelf`
+It displays information about one or more ELF format object files.  The options control what particular information to display.
+```shell-session
+$ readelf --help
+
+Usage: readelf <option(s)> elf-file(s)
+ Display information about the contents of ELF format files
+ Options are:
+  -a --all               Equivalent to: -h -l -S -s -r -d -V -A -I
+  -h --file-header       Display the ELF file header
+  -l --program-headers   Display the program headers
+     --segments          An alias for --program-headers
+  -S --section-headers   Display the sections' header
+     --sections          An alias for --section-headers
+  -g --section-groups    Display the section groups
+  -t --section-details   Display the section details
+  -e --headers           Equivalent to: -h -l -S
+  -s --syms              Display the symbol table
+     --symbols           An alias for --syms
+  --dyn-syms             Display the dynamic symbol table
+  -n --notes             Display the core notes (if present)
+  -r --relocs            Display the relocations (if present)
+  -u --unwind            Display the unwind info (if present)
+  -d --dynamic           Display the dynamic section (if present)
+  -V --version-info      Display the version sections (if present)
+  -A --arch-specific     Display architecture specific information (if any)
+  -c --archive-index     Display the symbol/file index in an archive
+  -D --use-dynamic       Use the dynamic section info when displaying symbols
+  -x --hex-dump=<number|name>
+                         Dump the contents of section <number|name> as bytes
+  -p --string-dump=<number|name>
+                         Dump the contents of section <number|name> as strings
+  -R --relocated-dump=<number|name>
+                         Dump the contents of section <number|name> as relocated bytes
+  -z --decompress        Decompress section before dumping it
+  -w[lLiaprmfFsoRtUuTgAckK] or
+  --debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,
+               =frames-interp,=str,=loc,=Ranges,=pubtypes,
+               =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,
+               =addr,=cu_index,=links,=follow-links]
+                         Display the contents of DWARF debug sections
+  --dwarf-depth=N        Do not display DIEs at depth N or greater
+  --dwarf-start=N        Display DIEs starting with N, at the same depth
+                         or deeper
+  -I --histogram         Display histogram of bucket list lengths
+  -W --wide              Allow output width to exceed 80 characters
+  @<file>                Read options from <file>
+  -H --help              Display this information
+  -v --version           Display the version number of readelf
+Report bugs to <http://www.sourceware.org/bugzilla/>
 ```
 <br/>
 
